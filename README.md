@@ -1,7 +1,9 @@
 # ASAP-Net
 This project implements **ASAP-Net** of paper ASAP-Net: Attention and Structure Aware Point Cloud Sequence Segmentation  **(BMVC2020)**.
 
-![](https://github.com/intrepidChw/ASAP-Net/blob/master/pics/demo.gif)
+![Semantic segmentation result on SemanticKITTI](https://github.com/intrepidChw/ASAP-Net/blob/master/pics/demo.gif)
+
+## Overview
 
 We improve spatio-temporal point cloud feature learning with a flexible module called
 ASAP module considering both attention and structure information across frames, which can be combined with different backbones. Incorporating our module into backbones brings semantic segmentation performance improvements on both Synthia and SemanticKITTI datasets (**+3.4** to **+15.2** mIoU points with different backbones).
