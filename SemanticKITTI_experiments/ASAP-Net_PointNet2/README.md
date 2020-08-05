@@ -1,51 +1,36 @@
-# Pointnet2.PyTorch
+# SemanticKITTI Experiments with PointNet++ as Backbone
 
-* PyTorch implementation of [PointNet++](https://arxiv.org/abs/1706.02413) based on [erikwijmans/Pointnet2_PyTorch](https://github.com/erikwijmans/Pointnet2_PyTorch).
-* Faster than the original codes by re-implementing the CUDA operations. 
+This folder contains codes of experiments with PointNet++ as Backbone on SemanticKITTI dataset. Note that we follow the Single Scan task of the [SemanticKITTI Competition](https://competitions.codalab.org/competitions/20331).
 
-## Installation
-### Requirements
-* Linux (tested on Ubuntu 14.04/16.04)
-* Python 3.6+
-* PyTorch 1.0
+## Training
 
-### Install 
-Install this library by running the following command:
+To train the network, please first change to `tools/`
 
-```shell
-cd pointnet2
-python setup.py install
-cd ../
+```
+cd tools/
 ```
 
-## Examples
-Here I provide a simple example to use this library in the task of KITTI ourdoor foreground point cloud segmentation, and you could refer to the paper [PointRCNN](https://arxiv.org/abs/1812.04244) for the details of task description and foreground label generation.
+Under the directory of `tools/`, use following command to train a network from scratch:
 
-1. Download the training data from [KITTI 3D object detection](http://www.cvlibs.net/datasets/kitti/eval_object.php?obj_benchmark=3d) website and organize the downloaded files as follows:
 ```
-Pointnet2.PyTorch
-├── pointnet2
-├── tools
-│   ├──data
-│   │  ├── KITTI
-│   │  │   ├── ImageSets
-│   │  │   ├── object
-│   │  │   │   ├──training
-│   │  │   │      ├──calib & velodyne & label_2 & image_2
-│   │  train_and_eval.py
+python trainEval.py --data_root /path/to/dataset --output_dir /path/to/output
 ```
 
-2. Run the following command to train and evaluate:
-```shell
+To train a network from a pretrained model:
+
+```
+python trainEval.py --data_root /path/to/dataset --output_dir /path/to/output --ckpt /path/to/pretrained
+```
+
+One may change the flag `--net` to use different frameworks (PNv2_SAP-1, PNv2_ASAP-1 or PNv2_ASAP-2) and other flags like `--batch_size`, `--lr` etc.
+
+## Inference
+
+To get the predictions of a trained model:
+
+```
 cd tools
-python train_and_eval.py --batch_size 8 --epochs 100 --ckpt_save_interval 2 
+python test.py --data_root /path/to/dataset --output_dir /path/to/output --ckpt /path/to/pretrained
 ```
 
-
-
-## Project using this repo:
-* [PointRCNN](https://github.com/sshaoshuai/PointRCNN): 3D object detector from raw point cloud.
-
-## Acknowledgement
-* [charlesq34/pointnet2](https://github.com/charlesq34/pointnet2): Paper author and official code repo.
-* [erikwijmans/Pointnet2_PyTorch](https://github.com/erikwijmans/Pointnet2_PyTorch): Initial work of PyTorch implementation of PointNet++. 
+To get the result on test split, you should submit the predictions to Single Scan task of the [SemanticKITTI Competition](https://competitions.codalab.org/competitions/20331). You may also check the validity of your submission using the [python script](https://github.com/PRBonn/semantic-kitti-api/blob/master/validate_submission.py) in [PRBonn](https://github.com/PRBonn)/**[semantic-kitti-api](https://github.com/PRBonn/semantic-kitti-api)**.
