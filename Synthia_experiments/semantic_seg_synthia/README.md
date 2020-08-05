@@ -40,13 +40,19 @@ The generated processed data is also provided <a href="https://drive.google.com/
 
 Then execute `python gen_label_weights.py --data_root ../processed_pc` to get the label weight file `data_prep/labelweights.npz`.
 
-## Training of Direct Grouping
+## Training of Models
 
-The script for training and testing of direct grouping model is `command_train_direct.sh`. To train, use the following command.
+The script for training and testing of a model is `command_train_model.sh`. Please use the following command:
 
 ```
-sh command_train_direct.sh
+sh command_train_model.sh
 ```
 
-One may change the flags such as `num_frame`, `num_point` etc for different architecture specs.
+The script for only testing of a model is `command_test_model.sh`. Please use the following command:
+
+```
+sh command_test_model.sh
+```
+
+For both scripts, one may change the flag `model` to use different frameworks (PNv2_SAP-1 or PNv2_ASAP-1) and other flags such as `num_frame`, `num_point` etc for different architecture specs.
 
