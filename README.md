@@ -40,6 +40,8 @@ The codes for experiments on Synthia is in `Synthia_experiments/semantic_seg_syn
 
 ## Experiments on SemanticKITTI
 
+The **[SemanticKITTI_experiments/ImageSet2]https://github.com/intrepidChw/ASAP-Net/tree/master/SemanticKITTI_experiments/ImageSet2** folder contains dataset split information. Please put it under your semanticKITTI dataset like `Path to semanticKITTI dataset/dataset/sequences`.
+
 #### PointNet++ as Backbone
 
 The codes for framework with PointNet++ as Backbone is in `SemanticKITTI_experiments/ASAP-Net_PointNet2`. Please refer to `SemanticKITTI_experiments/ASAP-Net_PointNet2/README.md` for more information on running instructions.
@@ -57,7 +59,7 @@ Special thanks for open source codes including  [xingyul](https://github.com/xin
 Please cite these papers in your publications if it helps your research:
 
 ```
-@@article{caoasap,
+@article{caoasap,
   title={ASAP-Net: Attention and Structure Aware Point Cloud Sequence Segmentation},
   author={Cao, Hanwen and Lu, Yongyi and Lu, Cewu and Pang, Bo and Liu, Gongshen and Yuille, Alan}
   booktitle={British Machine Vision Conference (BMVC)},
