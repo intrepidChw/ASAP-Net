@@ -40,7 +40,7 @@ The codes for experiments on Synthia is in `Synthia_experiments/semantic_seg_syn
 
 ## Experiments on SemanticKITTI
 
-The **[SemanticKITTI_experiments/ImageSet2]https://github.com/intrepidChw/ASAP-Net/tree/master/SemanticKITTI_experiments/ImageSet2** folder contains dataset split information. Please put it under your semanticKITTI dataset like `Path to semanticKITTI dataset/dataset/sequences`.
+The [SemanticKITTI_experiments/ImageSet2](https://github.com/intrepidChw/ASAP-Net/tree/master/SemanticKITTI_experiments/ImageSet2) folder contains dataset split information. Please put it under your semanticKITTI dataset like `Path to semanticKITTI dataset/dataset/sequences`.
 
 #### PointNet++ as Backbone
 
