@@ -14,18 +14,24 @@ The Synthia experiments is implemented with TensorFlow and the SemanticKITTI exp
 
 #### Compile TF Operators for Synthia Experiments
 
-We use the implementation of [xingyul](https://github.com/xingyul)/**[meteornet](https://github.com/xingyul/meteornet)**. Please follow the instructions below.
+We use the implementation in [xingyul](https://github.com/xingyul)/**[meteornet](https://github.com/xingyul/meteornet)**. Please follow the instructions below.
 
-The TF operators are included under `Synthia_experiments/tf_ops`, you need to compile them first by `make` under each ops subfolder (check `Makefile`) or directly use `sh Synthia_experiments/command_make.sh`. **Update** `arch` **in the Makefiles for different** [CUDA Compute Capability](https://en.wikipedia.org/wiki/CUDA#GPUs_supported) **that suits your GPU if necessary**.
+The TF operators are included under `Synthia_experiments/tf_ops`, you need to compile them first by `make` under each ops subfolder (check `Makefile`) or directly use the following commands:
+
+```
+cd Synthia_experiments
+sh command_make.sh
+```
+
+ **Please update** `arch` **in the Makefiles for different** [CUDA Compute Capability](https://en.wikipedia.org/wiki/CUDA#GPUs_supported) **that suits your GPU if necessary**.
 
 #### Compile Torch Operators for SemanticKITTI Experiments
 
-We use the PoinNet++ implementation of [sshaoshuai](https://github.com/sshaoshuai)/**[Pointnet2.PyTorch](https://github.com/sshaoshuai/Pointnet2.PyTorch)**. Use the commands below to build Torch operators. 
+We use the PoinNet++ implementation in [sshaoshuai](https://github.com/sshaoshuai)/**[Pointnet2.PyTorch](https://github.com/sshaoshuai/Pointnet2.PyTorch)**. Use the commands below to build Torch operators. 
 
 ```
 cd SemanticKITTI_experiments/ASAP-Net_PointNet2/pointnet2
 python setup.py install
-cd ../../..
 ```
 
 ## Experiments on Synthia
@@ -51,5 +57,10 @@ Special thanks for open source codes including  [xingyul](https://github.com/xin
 Please cite these papers in your publications if it helps your research:
 
 ```
-@coming soon
+@@article{caoasap,
+  title={ASAP-Net: Attention and Structure Aware Point Cloud Sequence Segmentation},
+  author={Cao, Hanwen and Lu, Yongyi and Lu, Cewu and Pang, Bo and Liu, Gongshen and Yuille, Alan}
+  booktitle={British Machine Vision Conference (BMVC)},
+  year={2020}
+}
 ```
